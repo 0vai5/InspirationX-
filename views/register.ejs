@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  </head>
+  <body>
+    <!-- component -->
+    <!-- Create by joker banny -->
+    <div class="h-screen bg-indigo-100 flex justify-center items-center">
+      <div class="lg:w-2/5 md:w-1/2 w-2/3">
+        <form
+          action="/register"
+          method="post"
+          class="bg-white p-10 rounded-lg shadow-lg min-w-full"
+        >
+          <h1
+            class="text-center text-2xl mb-6 text-gray-600 font-bold font-sans"
+          >
+            Register
+          </h1>
+          <div>
+            <label
+              class="text-gray-800 font-semibold block my-3 text-md"
+              for="username"
+              >Username</label
+            >
+            <input
+              class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none"
+              type="text"
+              name="username"
+              id="username"
+              placeholder="username"
+            />
+          </div>
+          <div>
+            <label
+              class="text-gray-800 font-semibold block my-3 text-md"
+              for="email"
+              >Email</label
+            >
+            <input
+              class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none"
+              type="text"
+              name="email"
+              id="email"
+              placeholder="@email"
+            />
+          </div>
+          <div>
+            <label
+              class="text-gray-800 font-semibold block my-3 text-md"
+              for="password"
+              >Password</label
+            >
+            <input
+              class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="password"
+            />
+          </div>
+          <div>
+            <label
+              class="text-gray-800 font-semibold block my-3 text-md"
+              for="fullname"
+              >Full-Name</label
+            >
+            <input
+              class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none"
+              type="text"
+              name="fullName"
+              id="fullName"
+              placeholder="full-name"
+            />
+          </div>
+          <input
+            type="submit"
+            class="w-full mt-6 bg-indigo-600 rounded-lg px-4 py-2 text-lg text-white tracking-wide font-semibold font-sans"
+            value="Register"
+          />
+          <span>or</span>
+          <span>Already on Pinterest?</span><a href="/login">Login</a>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

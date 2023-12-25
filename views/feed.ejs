@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feed</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- Your header -->
+  <div class="pinterest">
+    <div class="left">
+      <a href="/feed" class="logo"><i class="fab fa-pinterest"></i></a>
+      <a href="/feed" class="home">Home</a>
+    </div>
+    <div class="search">
+      <i class="fas fa-search"></i>
+      <input type="search" name="" placeholder="search" id="">
+    </div>
+    <div class="right">
+      <a href="/logout" class="items">logout</a>
+      <a href="/profile" class="items">profile</a>
+      
+    </div>
+  </div>
+
+
+
+
+  
+
+  <!-- Posts -->
+  <div class="container">
+    <div class="grid grid-cols-4 gap-4">
+      <% allPosts.forEach(post => { %>
+        <div class="content-wrapper">
+          <div class="image-wrapper">
+            <!-- Your image -->
+            <img src="/images/uploads/<%= post.file %>" alt="Post Image" />
+            <!-- Additional post details and buttons -->
+            <p class="text-zinc-500">@<%= post.user.username %></p>
+            <!-- Additional buttons or actions can be added here -->
+          </div>
+          <!-- Post caption -->
+          <p><%= post.postCaption %></p>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pinterest">
+      <div class="left">
+        <a href="/" class="logo"><i class="fab fa-pinterest"></i></a>
+        <a href="/" class="home">Home</a>
+      </div>
+      <div class="search">
+        <i class="fas fa-search"></i>
+        <input type="search" name="" placeholder="search" id="" />
+      </div>
+      <div class="right">
+        <a href="/logout" class="items">logout</a>
+      </div>
+    </div>
+    <!-- component -->
+    <div class="relative max-w-2xl mx-auto my-3">
+      <!-- top header -->
+      <div class="flex flex-col justify-center items-center my-5">
+        <div
+          class="w-16 h-16 bg-cover bg-center bg-no-repeat rounded-full"
+          style="
+            background-image: url('https://img.freepik.com/premium-vector/gamer-mascot-geek-boy-esports-logo-avatar-with-headphones-glasses-cartoon-character_8169-228.jpg');
+          "
+        ></div>
+        <span class="text-lg font-semibold text-zinc-800"
+          ><%= user.fullname %></span
+        >
+
+        <span class="text-lg text-zinc-800">@<%= user.username %></span>
+
+        
+
+        <p class="mb-3">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+          <button
+            class="my-5 px-5 py-2 font-semibold text-sm border border-gray-400"
+          >
+            Edit profile
+          </button>
+          <a
+            href="/create"
+            class="my-5 px-5 py-2 font-semibold text-sm border border-gray-400"
+          >
+            Create Post
+          </a>
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="column">
+        <% user.posts.forEach((post) => { %>
+          <div class="content-wrapper">
+            <div class="image-wrapper">
+              <img src='/images/uploads/<%= post.file %>' alt="" />
+            </div>
+            <p><%= post.postCaption %></p>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+      </div>
+    </div> 
+  </body>
+</html>
+
+
